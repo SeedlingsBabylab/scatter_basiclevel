@@ -3,8 +3,6 @@ import sys
 
 import shutil
 
-from collections import Counter
-
 
 class BLFile(object):
     def __init__(self, path, filename, key):
@@ -19,6 +17,11 @@ if __name__ == "__main__":
 
     start_dir = sys.argv[1]
     subj_files = sys.argv[2]
+
+
+    if len(sys.argv) > 4:
+        print "\nusage:  $: python scatterbl.py  folder_with_all_bl_files  path_to_subject_files  [--audio] [--video]\n\ncan't have more than 3 arguments"
+        sys.exit(0)
 
     audio_bl = False
     if "--audio" in sys.argv:
