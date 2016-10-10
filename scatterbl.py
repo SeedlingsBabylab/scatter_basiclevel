@@ -3,15 +3,11 @@ import sys
 
 import shutil
 
-
 class BLFile(object):
     def __init__(self, path, filename, key):
         self.path = path
         self.filename = filename
         self.key = key
-
-    def __eq__(self, other):
-        return self.key == other.key
 
 if __name__ == "__main__":
 
@@ -53,5 +49,3 @@ if __name__ == "__main__":
                 for bl_file in bl_files:
                     if bl_file.key == key:
                         shutil.copy(bl_file.path, os.path.join(root, bl_file.filename))
-
-    print
